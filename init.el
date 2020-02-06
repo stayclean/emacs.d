@@ -109,6 +109,10 @@
 (global-semantic-idle-summary-mode 1)
 (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
 (global-semantic-stickyfunc-mode 1)
+
+(global-semantic-decoration-mode t)
+(global-semantic-highlight-func-mode t)
+(global-semantic-show-unmatched-syntax-mode t)
 ;;;;;;;;;;;;;;;;;;;;;;set up folding
 ;(add-hook 'c-mode-common-hook   'hs-minor-mode)
 
@@ -127,3 +131,14 @@
 (setq Tex-parse-self t)
 (setq-default Tex-master nil)
 
+(global-ede-mode t)
+
+(ede-cpp-root-project "jos"
+                      :name "JOS Project"
+                      :file "/home/stayclean/workspace/jos/GNUmakefile"
+                      :include-path '("/kern"
+                                      "/inc"
+                                      )
+)
+
+(global-set-key  (kbd "C-@") 'company-complete)
